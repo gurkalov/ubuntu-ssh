@@ -6,12 +6,23 @@ services:
 env:
   global:
   - IMAGE_NAME=gurkalov/ubuntu-ssh
+  - VERSION=latest
 
 before_script:
-- docker pull ubuntu:latest || true
+- make pull version=${VERSION}
 
 script:
 - docker build --pull --cache-from "${IMAGE_NAME}" --tag "${IMAGE_NAME}" .
 
 after_script:
 - docker images
+
+before_deploy:
+- docker login -u "$DOCKER_USER" -p "$DOCKER_PASSWORD"
+- docker tag "$IMAGE_NAME" "${IMAGE_NAME}:${VERSION}"
+
+deploy:
+  provider: script
+  script: docker push "${IMAGE_NAME}:${VERSION}"
+  on:
+    branch: dev
