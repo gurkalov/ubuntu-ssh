@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/gurkalov/ubuntu-ssh.svg?branch=master)](https://travis-ci.org/gurkalov/ubuntu-ssh)
+[![BCH compliance](https://bettercodehub.com/edge/badge/gurkalov/ubuntu-ssh?branch=master)](https://bettercodehub.com/)
 
 Get Started
 -----
