@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/gurkalov/ubuntu-ssh.svg?branch=master)](https://travis-ci.org/gurkalov/ubuntu-ssh)
+
 Get Started
 -----
 
